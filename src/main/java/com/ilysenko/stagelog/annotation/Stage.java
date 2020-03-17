@@ -9,6 +9,8 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface Stage {
 
+    String value() default "";
+
     String startMessage() default "";
 
     String finishMessage() default "";

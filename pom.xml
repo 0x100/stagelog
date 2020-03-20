@@ -56,7 +56,7 @@
                     <target>${java.version}</target>
                     <showWeaveInfo>true</showWeaveInfo>
                     <verbose>true</verbose>
-                    <Xlint>ignore</Xlint>
+                    <Xlint>warning</Xlint>
                     <encoding>UTF-8</encoding>
                 </configuration>
                 <executions>

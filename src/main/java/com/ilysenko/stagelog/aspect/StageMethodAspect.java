@@ -2,28 +2,31 @@ package com.ilysenko.stagelog.aspect;
 
 import com.ilysenko.stagelog.annotation.Stage;
 import org.aspectj.lang.JoinPoint;
-import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.Aspect;
 import org.aspectj.lang.annotation.Before;
+import org.aspectj.lang.annotation.Pointcut;
 
 @Aspect
 public class StageMethodAspect {
+    @Pointcut("@annotation(stage) && execution(@com.ilysenko.stagelog.annotation.Stage * *.*(..))")
+    public void methodPointcut(Stage stage) {
+    }
 
-    @Before("@annotation(stage)")
+    @Before(value = "methodPointcut(stage)", argNames = "jp,stage")
     public void before(JoinPoint jp, Stage stage) {
         String startMessage = getStartMessage(stage);
         if (isEmpty(startMessage)) {
-            startMessage = "Method " + jp.getSignature().toShortString() + " started...";
+            startMessage = jp.getSignature().toShortString() + "...";
         }
         System.out.println(startMessage);
     }
 
-    @AfterReturning("@annotation(stage)")
+    @AfterReturning(pointcut = "methodPointcut(stage)", argNames = "jp,stage")
     public void after(JoinPoint jp, Stage stage) {
         String finishMessage = stage.finishMessage();
         if (isEmpty(finishMessage) && isEmpty(getStartMessage(stage))) {
-            finishMessage = "Method " + jp.getSignature().toShortString() + " finished";
+            finishMessage = jp.getSignature().toShortString() + " finished";
         }
         System.out.println(finishMessage);
     }

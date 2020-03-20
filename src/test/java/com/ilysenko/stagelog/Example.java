@@ -2,7 +2,7 @@ package com.ilysenko.stagelog;
 
 import com.ilysenko.stagelog.annotation.Stage;
 
-public class StagesExample {
+public class Example {
 
     @Stage(startMessage = "Starting...", finishMessage = "Started")
     public void start() {

@@ -6,6 +6,6 @@ public class StagelogTest {
 
     @Test
     void stages() {
-        new StagesExample().start();
+        new Example().start();
     }
 }

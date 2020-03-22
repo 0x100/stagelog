@@ -23,7 +23,7 @@ private void init() {
     applyConfig();
 }
 
-@Stage(value = "Load config")
+@Stage("Load config")
 private void loadConfig() {
     // ...
     sleep(100);
@@ -35,7 +35,7 @@ private void loadData() {
     sleep(200);
 }
 
-@Stage("Apply config")
+@Stage(startMessage = "Apply config")
 private void applyConfig() {
     // ...
     sleep(300);

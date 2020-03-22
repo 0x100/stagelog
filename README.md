@@ -1,6 +1,11 @@
 # StageLog
 Annotated logging of the code
 
+###
+
+![build](https://github.com/0x100/stagelog/workflows/build/badge.svg?branch=master)
+[![](https://jitpack.io/v/0x100/stagelog.svg)](https://jitpack.io/#0x100/stagelog)
+
 ## Features
 
 - Logging of the start and/or end of the method
@@ -37,9 +42,9 @@ private void applyConfig() {
 }
 ```
 
-And then build your app.
+Then build your app.
 
-Result logging:
+Result output:
 
 ```
 Initialization...
@@ -103,7 +108,7 @@ Fork the repository, make changes, write a test for your code, send me a pull re
 I will review your changes and apply them to the master branch shortly, provided they don't violate quality standards. 
 To avoid frustration, before sending a pull request please run the Maven build:
 ```
-$ mvnw clean package
+$ mvn clean package
 ```
 
 ##

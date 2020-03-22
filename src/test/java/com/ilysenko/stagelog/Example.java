@@ -28,19 +28,19 @@ public class Example {
     @Stage(value = "Load config")
     private void loadConfig() {
         // ...
-        sleep(123);
+        sleep(100);
     }
 
-    @Stage(value = "Load data")
+    @Stage(trackTime = true)
     private void loadData() {
         // ...
-        sleep(456);
+        sleep(200);
     }
 
-    @Stage(value = "Apply config")
+    @Stage("Apply config")
     private void applyConfig() {
         // ...
-        sleep(789);
+        sleep(300);
     }
 
     @Stage(value = "Show user interface")

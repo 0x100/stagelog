@@ -8,7 +8,7 @@ Annotated logging of the code
 
 ## Features
 
-- Logging of the start and/or end of the method
+- Logging of start and/or finish of method execution
 - Tracking time spent by the method
 
 ## Using

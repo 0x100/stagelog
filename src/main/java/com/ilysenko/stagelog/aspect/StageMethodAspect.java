@@ -22,7 +22,7 @@ public class StageMethodAspect {
     }
 
     @Around(value = "methodPointcut(stage)", argNames = "joinPoint,stage")
-    public void before(ProceedingJoinPoint joinPoint, Stage stage) throws Throwable {
+    public void interceptStageMethod(ProceedingJoinPoint joinPoint, Stage stage) throws Throwable {
         StopWatch stopWatch = beforeStart(joinPoint, stage);
         joinPoint.proceed();
         afterFinish(joinPoint, stage, stopWatch);
